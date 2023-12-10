@@ -7,6 +7,7 @@ LICENSE file in the root directory of this source tree.
 
 from matplotlib.lines import Line2D
 from experiments import mnist_lossy, jsonmaps, toy_multisets
+import mnist_trial
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -15,22 +16,41 @@ from trial import exp
 init_trial = exp()
 data  = init_trial.values()
 
-mnist = mnist_lossy.run_all_experiments(seed=0)
-jsons = jsonmaps.run_all_experiments(seed=0)
-toyms = toy_multisets.run_all_experiments(seed=0)
+mnist, metrics2 = mnist_trial.run_all_experiments(seed=0)
+print(mnist['compressed_length_multiset'])
+print(mnist['compressed_bits_for_run_length_encoding'])
+
+exit(0)
+fig, ax = plt.subplots()
+ax.plot(list(mnist.index.values), list(mnist['compressed_length_multiset']), color = "blue")
+ax.set_xlabel("size of multiset")
+ax.set_ylabel("bits")
+ax.set_yscale('log', base=2)
+# ax.legend("seq_length vs length of multiset")
+# fig.savefig("seq_length_vs_compressed_length_multiset.png")
+ax.plot(list(mnist.index.values), list(mnist['compressed_bits_for_run_length_encoding']), color = "red")
+# ax.xlabel("size of multiset")
+# ax.ylabel("bits")
+# ax.legend("seq_length vs length of multiset")
+fig.savefig("seq_length_vs_compressed_length_multiset.png")
+plt.show()
+
+exit(0)
+# jsons = jsonmaps.run_all_experiments(seed=0)
+# toyms = toy_multisets.run_all_experiments(seed=0)
 # def plot(s, ax, name, **params):
 #     ax.plot(s.index, s.avg, label=name, color='k', **params)
 #     ax.fill_between(s.index, s.lower, s.upper, alpha=0.25, color='gray')
 # fig,ax = plt.subplots()
 # print(toyms
-#         .loc[:2000]
-#         .compressed_length_multiset
+#     .loc[:2000]
+#     .compressed_length_multiset
 #         .unstack('alphabet_size')
 #         .swaplevel(0, 1, axis=1)[1024].avg)
 # exit(1)
 
 # # Bit savings plot
-# fig, ax = plt.subplots()
+#  fig, ax = plt.subplots()
 
 # jsons[['saved_bits_limit']]\
 # .plot(ax=ax, style=['k--'])
@@ -39,9 +59,9 @@ toyms = toy_multisets.run_all_experiments(seed=0)
 # .loc[2:]\
 # .plot(ax=ax, style=['k.-'])
 
-# mnist[['saved_bits']]\
-# .loc[50:] \
-# .plot(ax=ax, style=['k^-'])
+#  mnist[['saved_bits']]\
+#  .loc[50:] \
+#  .plot(ax=ax, style=['k^-'])
 
 # jsons[['saved_bits_limit_unnested']]\
 # .plot(ax=ax, style=['k--'])

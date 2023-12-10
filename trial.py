@@ -87,7 +87,8 @@ class exp():
                     log2comp.append(temp)
                 log2comp = np.array(log2comp)
                 sumlogs = np.sum(log2comp)
-                temp_list.append(sumlogs*64/8)
+                bits_symbol=math.ceil(math.log2(seq_lens[j]))
+                temp_list.append(sumlogs*bits_symbol)
             alphabet_op.append(temp_list)
         return alphabet_op
 
