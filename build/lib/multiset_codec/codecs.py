@@ -67,15 +67,13 @@ def Multiset(symbol_codec: Codec) -> Codec:
     swor_codec = SamplingWithoutReplacement()
 
     def encode(ans_state, multiset):
-        counter = 0
         while multiset:
             # 1) Sample, without replacement, a symbol using ANS decode.
             ans_state, symbol, multiset = \
                     swor_codec.decode(ans_state, multiset)
-            print("1  "+ str(ans_state) + " " + str(symbol) +" " +str(multiset))
+
             # 2) Encode the selected symbol onto the same ANS state.
             (ans_state,) = symbol_codec.encode(ans_state, symbol)
-            print("3  "+ str(ans_state))
         return (ans_state,)
 
     def decode(ans_state, multiset_size):
@@ -116,7 +114,6 @@ def SamplingWithoutReplacement() -> Codec:
         multiset, (start, freq), symbol = \
                 reverse_lookup_then_remove(multiset, cdf_value[0])
         ans_state = decode_(start, freq)
-        print("2  "+ str(ans_state))
         return ans_state, symbol, multiset
 
     return substack(Codec(encode, decode), lambda head: head[:1])

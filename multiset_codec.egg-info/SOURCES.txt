@@ -1,0 +1,10 @@
+README.md
+setup.py
+multiset_codec/__init__.py
+multiset_codec/codecs.py
+multiset_codec/msbst.py
+multiset_codec/rans.py
+multiset_codec.egg-info/PKG-INFO
+multiset_codec.egg-info/SOURCES.txt
+multiset_codec.egg-info/dependency_links.txt
+multiset_codec.egg-info/top_level.txt

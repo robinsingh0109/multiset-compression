@@ -46,9 +46,6 @@ def stack_slice(stack, n):
         else:
             warn(f'Popping from empty message. Generating {32*n} bits of random data.')
             arr, stack = rng.integers(1 << 32, size=n, dtype='uint32'), ()
-            # print("arr : {}".format(arr))
-            # print(stack)
-            # exit(0)
         if n >= len(arr):
             slc.append(arr)
             n -= len(arr)
@@ -88,7 +85,6 @@ def decode(ans_state, precisions):
 
         # check which entries need renormalizing
         idxs = head < rans_l
-        print("idxs : {}\n".format(idxs))
 
         # how many 32*n bits do we need from the tail?
         n = np.sum(idxs)

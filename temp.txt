@@ -1,0 +1,40 @@
+idxs : [ True]
+
+2  (array([2305843012867097183], dtype=uint64), ())
+1  (array([2305843012867097183], dtype=uint64), ()) 0 (7, 1, (1, 0, (), ()), (2, 2, (), ()))
+3  (array([2151741680], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [ True]
+
+2  (array([5280948661029864031], dtype=uint64), ())
+1  (array([5280948661029864031], dtype=uint64), ()) 1 (6, 1, (1, 0, (), ()), (2, 2, (), ()))
+3  (array([2762916580], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [ True]
+
+2  (array([3955545448818836063], dtype=uint64), ())
+1  (array([3955545448818836063], dtype=uint64), ()) 2 (5, 1, (1, 0, (), ()), (1, 2, (), ()))
+3  (array([3048540111], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [ True]
+
+2  (array([7856028047449948767], dtype=uint64), ())
+1  (array([7856028047449948767], dtype=uint64), ()) 1 (4, 1, (1, 0, (), ()), (1, 2, (), ()))
+3  (array([4112504771], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [ True]
+
+2  (array([4415768374454420063], dtype=uint64), ())
+1  (array([4415768374454420063], dtype=uint64), ()) 2 (3, 1, (1, 0, (), ()), ())
+3  (array([3340700017], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [False]
+
+2  (array([2227133344], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+1  (array([2227133344], dtype=uint64), (array([3653403231], dtype=uint32), ())) 1 (2, 1, (1, 0, (), ()), ())
+3  (array([5035535609], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [False]
+
+2  (array([2517767804], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+1  (array([2517767804], dtype=uint64), (array([3653403231], dtype=uint32), ())) 1 (1, 1, (1, 0, (), ()), ())
+3  (array([5701185469], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+idxs : [False]
+
+2  (array([5701185469], dtype=uint64), (array([3653403231], dtype=uint32), ()))
+1  (array([5701185469], dtype=uint64), (array([3653403231], dtype=uint32), ())) 0 ()
+3  (array([22960116802], dtype=uint64), (array([3653403231], dtype=uint32), ()))
