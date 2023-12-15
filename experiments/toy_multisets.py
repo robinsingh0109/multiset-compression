@@ -55,8 +55,7 @@ def run_single_experiment(seq_length, alphabet_size, seed):
 
     # Initialize ANS state
     ans_state = cs.base_message(shape=(1,))
-    print(ans_state)
-    exit(1)
+   
     # Encode multiset
     (ans_state,) = multiset_codec.encode(ans_state, multiset)
 
@@ -91,7 +90,7 @@ def run_single_experiment(seq_length, alphabet_size, seed):
         'duration': duration,
     }
 
-run_single_experiment(512,2048,13)
+# run_single_experiment(512,2048,13)
 def run_all_experiments(seed):
     '''Runs all experiments. This function is used by plots.py'''
 

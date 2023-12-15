@@ -32,7 +32,7 @@ class exp():
                 # multiset. This is required to show that the complexity will not scale
                 # with alphabet size.
                 alphabet_seen = np.random.choice(
-                        alphabet, size=512, p=source_probs, replace=False)
+                        alphabet, size=10, p=source_probs, replace=False)
 
                 source_probs_seen = source_probs[alphabet_seen]
                 source_probs_seen /= source_probs_seen.sum()
@@ -41,8 +41,7 @@ class exp():
                 # To do this, we start with alphabet_seen, and append seq_length-512
                 # symbols sampled from alphabet_seen.
                 sequence = np.r_[alphabet_seen, np.random.choice(
-                        alphabet_seen, size=seq_length+512, p=source_probs_seen)]
-
+                        alphabet_seen, size=seq_length-512, p=source_probs_seen)]
 
                 # The symbols will be encoded to the ANS state with a codec
                 # that has the exact source probabilities. Note that source_probs
@@ -87,7 +86,7 @@ class exp():
                     log2comp.append(temp)
                 log2comp = np.array(log2comp)
                 sumlogs = np.sum(log2comp)
-                bits_symbol=math.ceil(math.log2(seq_lens[j]))
+                bits_symbol=math.ceil(math.log2(alphabet_sizes[k]))
                 temp_list.append(sumlogs*bits_symbol)
             alphabet_op.append(temp_list)
         return alphabet_op

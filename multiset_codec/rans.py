@@ -88,7 +88,7 @@ def decode(ans_state, precisions):
 
         # check which entries need renormalizing
         idxs = head < rans_l
-        print("idxs : {}\n".format(idxs))
+        # print("idxs : {}\n".format(idxs))
 
         # how many 32*n bits do we need from the tail?
         n = np.sum(idxs)

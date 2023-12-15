@@ -186,5 +186,5 @@ ax.autoscale(tight=True)
 ax.set_ylim(top=2**15)
 
 # fig.savefig('figures/toy-multisets-rate.pdf')
-fig.savefig('figures/toy-multisets-rate.jpg', dpi=300)
+fig.savefig('figures/toy-multisets-rate_2.jpg', dpi=300)
 plt.show()
